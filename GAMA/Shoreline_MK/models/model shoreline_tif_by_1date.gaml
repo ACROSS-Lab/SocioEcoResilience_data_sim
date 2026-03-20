@@ -33,12 +33,12 @@ species shoreline1 {
 
 experiment main type: gui {
     output {
-        display right_view type: 2d {
+        display firstday_view type: 2d {
             mesh fff1 color: fff1.bands scale: 1 triangulation: true smooth: 4;
             species shoreline1 aspect: base;
            }
           
-         display left_view type: 2d {
+         display nextday_view type: 2d {
 			mesh fff color: fff.bands scale: 1 triangulation: true smooth: 4;
 			species shoreline aspect: base;
                 
