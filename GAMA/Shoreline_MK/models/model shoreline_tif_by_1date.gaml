@@ -182,12 +182,8 @@ experiment main type: gui {
                 draw "MULTI-NORM INDICATORS" at: {w*0.02, h*0.03} color: #black font: font("Arial",18,#bold);
                 loop j from: 0 to: 4 { draw ["Season","L0(%)","L1(m)","L2(m)","C"] at j at: {w*cx[j], h*0.10} color: #black font: font("Courier New",13,#bold); }
                 draw line({w*0.02, h*0.13}, {w*0.95, h*0.13}) color: #gray;
-                rgb cc <- (current_season="NE") ? rgb(220,40,40) : rgb(20,100,220);
-                list<string> cv <- [current_season+" (now)", string(current_L0 with_precision 1), string(current_L1 with_precision 1), string(current_L2 with_precision 1), string(current_C with_precision 3)];
-                loop j from: 0 to: 4 { draw cv[j] at: {w*cx[j], h*0.18} color: cc font: font("Courier New",12,#bold); }
-                draw line({w*0.02, h*0.22}, {w*0.95, h*0.22}) color: #gray;
                 loop i from: 0 to: length(table_seasons)-1 {
-                    float ry <- h * (0.27 + i * 0.07);
+                    float ry <- h * (0.17 + i * 0.07);
                     rgb rc <- (copy_between(table_seasons[i],0,2)="NE") ? rgb(200,50,50) : rgb(20,90,200);
                     list<string> rv <- [table_seasons[i], string(table_L0[i] with_precision 1), string(table_L1[i] with_precision 1), string(table_L2[i] with_precision 1), string(table_C[i] with_precision 3)];
                     loop j from: 0 to: 4 { draw rv[j] at: {w*cx[j], ry} color: rc font: font("Courier New",11,#plain); }
